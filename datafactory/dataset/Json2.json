@@ -15,7 +15,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "@dataset().destination",
+				"fileName": {
+					"value": "@dataset().file_destination",
+					"type": "Expression"
+				},
 				"fileSystem": "datalake"
 			}
 		},
