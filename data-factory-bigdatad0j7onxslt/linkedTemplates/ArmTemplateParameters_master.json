@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "data-factory-bigdatad0j7onxslt"
+		},
+		"blobSourceBlobStorageLinkedService_properties_typeProperties_serviceEndpoint": {
+			"value": "https://sourcebigdatad0j7onxslt.blob.core.windows.net"
+		},
+		"databricksClusterLinkedService_properties_typeProperties_existingClusterId": {
+			"value": "0311-160632-6pzbi2qx"
+		},
+		"datalakeLinkedService_properties_typeProperties_url": {
+			"value": "https://datalakebigdatad0j7onxsl.dfs.core.windows.net/"
+		},
+		"keyVaultLinkedService_properties_typeProperties_baseUrl": {
+			"value": "https://bigdatad0j7onxslt-kv.vault.azure.net/"
+		},
+		"storage_trigger_properties_PatientDataIngestion_parameters_trigger_file_name": {
+			"value": "@trigger().outputs.body.fileName"
+		},
+		"storage_trigger_properties_PatientDataIngestion_parameters_destination": {
+			"value": "@concat('bronze/patient', '/', formatDateTime(utcnow(), 'yyyy'), '/',formatDateTime(utcnow(),'MM'),'/',formatDateTime(utcnow(),'dd'), '/', trigger().outputs.body.fileName)"
+		},
+		"storage_trigger_properties_typeProperties_scope": {
+			"value": "/subscriptions/7238ec25-9cf3-4bbf-aee2-52eb6c99e14a/resourceGroups/bigdatad0j7onxslt_rg/providers/Microsoft.Storage/storageAccounts/sourcebigdatad0j7onxslt"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
